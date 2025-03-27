@@ -1379,6 +1379,11 @@
                             $"Memory Used: {megabytesUsed}MB";
                         Connection.Send(response);
                         break;
+                    case "sex":
+                        long megabytesUsed = Process.GetCurrentProcess().PrivateMemorySize64 / (1024 * 1024);
+                        response.Entry.Message = $"У тебя писька ещё не выросла хыхыхыхахахалох";
+                        Connection.Send(response);
+                        break;
                      case "beer":
                         Notification beerNotification = new Notification
                         {
@@ -1408,7 +1413,7 @@
                         Connection.Send(response);
                         break; 
                     case "help":
-                        response.Entry.Message = $"List of commands:\n/help - shows this message\n/status - show server status"; // /usecode [code] - use bonus code
+                        response.Entry.Message = $"Список команд:\n/help - показывает это сообщение\n/status - посмотреть статус сервера\n/beer - выпить пиво\n/sex - секс"; // /usecode [code] - use bonus code
                         Connection.Send(response);
                         break;
                     case "gems":
